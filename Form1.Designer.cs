@@ -28,12 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            txtName = new TextBox();
+            btnSave = new Button();
+            saveLabel = new Label();
+            SuspendLayout();
+            // 
+            // txtName
+            // 
+            txtName.Location = new Point(95, 49);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(125, 27);
+            txtName.TabIndex = 0;
+            // 
+            // btnSave
+            // 
+            btnSave.Location = new Point(239, 47);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(94, 29);
+            btnSave.TabIndex = 1;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
+            // 
+            // saveLabel
+            // 
+            saveLabel.AutoSize = true;
+            saveLabel.Location = new Point(202, 108);
+            saveLabel.Name = "saveLabel";
+            saveLabel.Size = new Size(0, 20);
+            saveLabel.TabIndex = 2;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(saveLabel);
+            Controls.Add(btnSave);
+            Controls.Add(txtName);
+            Name = "Form1";
+            Text = "Form1";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private TextBox txtName;
+        private Button btnSave;
+        private Label saveLabel;
     }
 }
