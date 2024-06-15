@@ -12,6 +12,7 @@ namespace e_booking
     public class AppDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<Book> Books { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
@@ -20,7 +21,13 @@ namespace e_booking
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySQL(Program.Configuration.GetConnectionString("DefaultConnection"));
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddEnvironmentVariables();
+            var config = builder.Build();
+
+            optionsBuilder.UseMySQL(config.GetConnectionString("DefaultConnection"));
         }
     }
 }
