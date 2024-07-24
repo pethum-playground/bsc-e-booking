@@ -178,6 +178,8 @@ namespace e_booking
 
         private void label6_Click(object sender, EventArgs e)
         {
+            Form2 secondForm = new Form2();
+            secondForm.ShowDialog();
         }
 
         private void label8_Click(object sender, EventArgs e)
