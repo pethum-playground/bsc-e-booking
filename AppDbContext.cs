@@ -13,6 +13,8 @@ namespace e_booking
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Book> Books { get; set; }
+        public DbSet<TimeTable> time_table { get; set; }
+        public DbSet<HallCapacity> hall_capacities { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
