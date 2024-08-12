@@ -32,12 +32,12 @@ namespace e_booking
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(ServiceProvider.GetRequiredService<Form1>());
+            Application.Run(ServiceProvider.GetRequiredService<Form4>());
         }
 
         private static void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<Form1>();
+            services.AddTransient<Form4>();
             services.AddDbContext<AppDbContext>();
         }
     }
