@@ -21,6 +21,8 @@ namespace e_booking
             InitializeComponent();
             _context = context;
             _config = config;
+
+            LoadFormIntoPanel(new DashboardForm(_context));
         }
 
         public void LoadFormIntoPanel(Form form)
@@ -36,7 +38,8 @@ namespace e_booking
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            
+            var dashboardForm = new DashboardForm(_context);
+            LoadFormIntoPanel(dashboardForm);
         }
 
         private void btnReservation_Click(object sender, EventArgs e)

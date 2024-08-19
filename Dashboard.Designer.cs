@@ -35,7 +35,6 @@
             // 
             // panelSidebar
             // 
-            panelSidebar.BackColor = Color.LightGray;
             panelSidebar.Controls.Add(btn_reservation);
             panelSidebar.Controls.Add(btnDashboard);
             panelSidebar.Controls.Add(btnUserManagement);
@@ -77,14 +76,14 @@
             panelMain.Dock = DockStyle.Fill;
             panelMain.Location = new Point(200, 0);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(600, 450);
+            panelMain.Size = new Size(800, 450);
             panelMain.TabIndex = 1;
             // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1000, 450);
             Controls.Add(panelMain);
             Controls.Add(panelSidebar);
             Name = "Dashboard";
