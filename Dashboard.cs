@@ -53,5 +53,11 @@ namespace e_booking
             var reservationForm = new UserForm(_context, _config);
             LoadFormIntoPanel(reservationForm);
         }
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            var uploadDataForm = new Upload(_context);
+            LoadFormIntoPanel(uploadDataForm);
+        }
     }
 }

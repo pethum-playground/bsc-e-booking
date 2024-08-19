@@ -30,11 +30,13 @@
             btnDashboard = new Button();
             btnUserManagement = new Button();
             panelMain = new Panel();
+            btnUpload = new Button();
             panelSidebar.SuspendLayout();
             SuspendLayout();
             // 
             // panelSidebar
             // 
+            panelSidebar.Controls.Add(btnUpload);
             panelSidebar.Controls.Add(btn_reservation);
             panelSidebar.Controls.Add(btnDashboard);
             panelSidebar.Controls.Add(btnUserManagement);
@@ -46,7 +48,7 @@
             // 
             // btn_reservation
             // 
-            btn_reservation.Location = new Point(20, 178);
+            btn_reservation.Location = new Point(20, 120);
             btn_reservation.Name = "btn_reservation";
             btn_reservation.Size = new Size(160, 40);
             btn_reservation.TabIndex = 2;
@@ -64,7 +66,7 @@
             // 
             // btnUserManagement
             // 
-            btnUserManagement.Location = new Point(20, 110);
+            btnUserManagement.Location = new Point(20, 182);
             btnUserManagement.Name = "btnUserManagement";
             btnUserManagement.Size = new Size(160, 40);
             btnUserManagement.TabIndex = 1;
@@ -78,6 +80,15 @@
             panelMain.Name = "panelMain";
             panelMain.Size = new Size(800, 450);
             panelMain.TabIndex = 1;
+            // 
+            // btnUpload
+            // 
+            btnUpload.Location = new Point(20, 246);
+            btnUpload.Name = "btnUpload";
+            btnUpload.Size = new Size(160, 40);
+            btnUpload.TabIndex = 3;
+            btnUpload.Text = "Hall Details";
+            btnUpload.Click += btnUpload_Click;
             // 
             // Dashboard
             // 
@@ -95,5 +106,6 @@
         #endregion
 
         private Button btn_reservation;
+        private Button btnUpload;
     }
 }

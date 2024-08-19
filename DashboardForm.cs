@@ -1,4 +1,6 @@
-﻿using System;
+﻿using e_booking.Model;
+using ExcelDataReader;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -90,6 +92,52 @@ namespace e_booking
 
             return card;
         }
+
+        private void btnUploadExcel_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Excel Files|*.xls;*.xlsx|All files|*.*";
+                openFileDialog.Title = "Select an Excel File";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = openFileDialog.FileName;
+
+                    try
+                    {
+                        using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
+                        {
+                            using (var reader = ExcelReaderFactory.CreateReader(stream))
+                            {
+                                var result = reader.AsDataSet();
+
+                                // Assuming the first sheet contains the data
+                                var dataTable = result.Tables[0];
+
+                                foreach (System.Data.DataRow row in dataTable.Rows)
+                                {
+                                    string hallName = row[0].ToString();
+                                    int capacity = int.Parse(row[1].ToString()); 
+
+                                    var hall = new HallCapacity { HallName = hallName, Capacity = capacity };
+                                    _context.HallCapacities.Add(hall);
+                                }
+
+                                _context.SaveChanges();
+                            }
+                        }
+
+                        MessageBox.Show("Data imported successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
 
     }
 }
