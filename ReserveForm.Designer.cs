@@ -4,7 +4,7 @@ using System.Xml.Linq;
 
 namespace e_booking
 {
-    partial class Form1
+    partial class ReserveForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -53,6 +53,7 @@ namespace e_booking
             search_btn = new Button();
             sort_label = new Label();
             label9 = new Label();
+            label10 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -63,11 +64,11 @@ namespace e_booking
             label1.Font = new System.Drawing.Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Blue;
             label1.ImageAlign = ContentAlignment.TopCenter;
-            label1.Location = new Point(333, 32);
+            label1.Location = new Point(254, 32);
             label1.Name = "label1";
-            label1.Size = new Size(146, 28);
+            label1.Size = new Size(239, 28);
             label1.TabIndex = 0;
-            label1.Text = "Search Entries";
+            label1.Text = "Search Entries/ Booking";
             label1.TextAlign = ContentAlignment.TopCenter;
             label1.Click += Form1_Load;
             // 
@@ -274,13 +275,14 @@ namespace e_booking
             listView1.Size = new Size(443, 298);
             listView1.TabIndex = 4;
             listView1.UseCompatibleStateImageBehavior = false;
+            listView1.Click += listView1_Click;
             // 
             // search_btn
             // 
             search_btn.BackColor = SystemColors.ControlLightLight;
-            search_btn.Location = new Point(399, 79);
+            search_btn.Location = new Point(389, 79);
             search_btn.Name = "search_btn";
-            search_btn.Size = new Size(94, 29);
+            search_btn.Size = new Size(104, 29);
             search_btn.TabIndex = 5;
             search_btn.Text = "Search";
             search_btn.UseVisualStyleBackColor = false;
@@ -305,11 +307,21 @@ namespace e_booking
             label9.TabIndex = 7;
             label9.Text = "Sort by";
             // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(399, 109);
+            label10.Name = "label10";
+            label10.Size = new Size(79, 20);
+            label10.TabIndex = 8;
+            label10.Text = "(free slots)";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 469);
+            Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(sort_label);
             Controls.Add(search_btn);
@@ -350,5 +362,6 @@ namespace e_booking
         private Button reset_btn;
         private Label sort_label;
         private Label label9;
+        private Label label10;
     }
 }

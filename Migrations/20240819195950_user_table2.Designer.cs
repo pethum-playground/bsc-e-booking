@@ -10,8 +10,8 @@ using e_booking;
 namespace e_booking.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240724153526_booking-manaagement")]
-    partial class bookingmanaagement
+    [Migration("20240819195950_user_table2")]
+    partial class user_table2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,21 +20,6 @@ namespace e_booking.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "8.0.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
-
-            modelBuilder.Entity("e_booking.Model.Book", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("BookName")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Books");
-                });
 
             modelBuilder.Entity("e_booking.Model.HallCapacity", b =>
                 {
@@ -46,7 +31,30 @@ namespace e_booking.Migrations
 
                     b.HasKey("HallName");
 
-                    b.ToTable("hall_capacities");
+                    b.ToTable("HallCapacities");
+                });
+
+            modelBuilder.Entity("e_booking.Model.Slot", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("EndTime")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("EventName")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("HallName")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("StartTime")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Slots");
                 });
 
             modelBuilder.Entity("e_booking.Model.TimeTable", b =>
@@ -72,7 +80,7 @@ namespace e_booking.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("time_table");
+                    b.ToTable("TimeTables");
                 });
 
             modelBuilder.Entity("e_booking.Model.User", b =>
@@ -81,8 +89,24 @@ namespace e_booking.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Email")
                         .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Username")
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
