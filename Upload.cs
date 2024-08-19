@@ -4,6 +4,7 @@ using System.IO;
 using System.Windows.Forms;
 using e_booking.Model;
 using ExcelDataReader;
+using OfficeOpenXml;
 
 namespace e_booking
 {
@@ -84,6 +85,50 @@ namespace e_booking
                     catch (Exception ex)
                     {
                         MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void btnDownloadSample_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "Excel Files|*.xlsx";
+                saveFileDialog.Title = "Halls";
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = saveFileDialog.FileName;
+
+                    try
+                    {
+                        ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+                        using (var package = new ExcelPackage())
+                        {
+                            var worksheet = package.Workbook.Worksheets.Add("Sample");
+
+                            worksheet.Cells[1, 1].Value = "Hall Name";
+                            worksheet.Cells[1, 2].Value = "Capacity";
+
+                            var halls = _context.HallCapacities.ToList();
+
+                            for (int i = 0; i < halls.Count; i++)
+                            {
+                                worksheet.Cells[i+2, 1].Value = halls[i].HallName;
+                                worksheet.Cells[i+2, 2].Value = halls[i].Capacity;
+                            }
+
+                            // Save the file
+                            package.SaveAs(new FileInfo(filePath));
+                        }
+
+                        MessageBox.Show("Sample Excel file created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"An error occurred while creating the file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

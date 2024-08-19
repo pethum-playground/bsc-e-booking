@@ -52,7 +52,6 @@
             // 
             this.userTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.userTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-                new System.Windows.Forms.DataGridViewTextBoxColumn() { Name = "UserName", HeaderText = "User Name" },
                 new System.Windows.Forms.DataGridViewTextBoxColumn() { Name = "Email", HeaderText = "Email" },
                 new System.Windows.Forms.DataGridViewTextBoxColumn() { Name = "Status", HeaderText = "Status" }
             });

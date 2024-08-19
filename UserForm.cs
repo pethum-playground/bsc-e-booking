@@ -94,7 +94,6 @@ namespace e_booking
         private void AddUserToTable(Model.User user)
         {
             var index = userTable.Rows.Add();
-            userTable.Rows[index].Cells["UserName"].Value = user.Username;
             userTable.Rows[index].Cells["Email"].Value = user.Email;
             userTable.Rows[index].Cells["Status"].Value = user.IsActive ? "Active" : "Disabled";
         }

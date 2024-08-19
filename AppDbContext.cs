@@ -1,4 +1,5 @@
-﻿using e_booking.Model;
+﻿using e_booking.Helpers;
+using e_booking.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -30,6 +31,29 @@ namespace e_booking
             var config = builder.Build();
 
             optionsBuilder.UseMySQL(config.GetConnectionString("DefaultConnection"));
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            Seed(modelBuilder);
+        }
+
+        private void Seed(ModelBuilder modelBuilder)
+        {
+
+            modelBuilder.Entity<User>().HasData(
+                new User
+                {
+                    Id = 1,
+                    Username = "admin",
+                    Password = PasswordHelper.HashPassword("admin123"),
+                    Email = "admin@fct.kln.com"
+                }
+            );
+
+
         }
     }
 }
