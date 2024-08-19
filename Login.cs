@@ -1,4 +1,5 @@
 ﻿using e_booking.Helpers;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +15,12 @@ namespace e_booking
     public partial class Login : Form
     {
         private readonly AppDbContext _context;
+        private readonly IConfiguration _config;
 
-        public Login(AppDbContext context)
+        public Login(AppDbContext context, IConfiguration config)
         {
             _context = context;
+            _config = config;
             InitializeComponent();
         }
 
@@ -38,7 +41,7 @@ namespace e_booking
             }
 
             LoggedInUser.Instance.SetUser(user);
-            var dashboard = new Dashboard(_context);
+            var dashboard = new Dashboard(_context, _config);
             dashboard.Show();
 
             this.Hide();

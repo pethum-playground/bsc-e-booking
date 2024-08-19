@@ -7,9 +7,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Extensions.Configuration;
 
 namespace e_booking
 {
@@ -17,42 +20,75 @@ namespace e_booking
     {
         private readonly AppDbContext _context;
         private readonly List<User> _users = new List<User>();
+        private readonly IConfiguration _config;
 
-        public UserForm(AppDbContext context)
+        public UserForm(AppDbContext context, IConfiguration config)
         {
             _context = context;
+            _config = config;
             InitializeComponent();
         }
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            // Open AddUserForm as a dialog
+            progressBar.Visible = true;
+
             using (AddUserForm addUserForm = new AddUserForm())
             {
                 if (addUserForm.ShowDialog() == DialogResult.OK)
                 {
                     string userEmail = addUserForm.Email;
-                    string password = GeneratePassword();
+                    string password = GenerateRandomString(1);
 
                     var newUser = new Model.User { Email = userEmail, Password = PasswordHelper.HashPassword(password) };
                     _context.Users.Add(newUser);
                     _context.SaveChanges();
 
-                    SendEmailToUser(userEmail, password);
+                    SendEmailToUser(newUser);
                     AddUserToTable(newUser);
                 }
             }
+
+            progressBar.Visible = false;
         }
 
 
-        private string GeneratePassword()
+        static string GenerateRandomString(int length)
         {
-            return "GeneratedPassword123";
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var random = new Random();
+            return new string(Enumerable.Repeat(chars, length)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-        private void SendEmailToUser(string email, string password)
+        private void SendEmailToUser(User user)
         {
-            
+            try
+            {
+                string fromAddress = _config["Email:From"];
+                string fromPassword = _config["Email:Password"]; 
+
+                MailMessage mail = new MailMessage();
+                mail.From = new MailAddress(fromAddress);
+                mail.To.Add(user.Email);
+                mail.Subject = "Your Account Details";
+                mail.Body = $"Dear user,\n\nYour account has been created successfully. \nYour password is: {user.Password}\n\nPlease keep it secure.\n\nBest regards,\nYour FCT";
+
+                // Setup the SMTP client
+                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587)
+                {
+                    Credentials = new NetworkCredential(fromAddress, fromPassword),
+                    EnableSsl = true 
+                };
+
+                smtpClient.Send(mail);
+
+                MessageBox.Show("Email sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to send email. Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void AddUserToTable(Model.User user)

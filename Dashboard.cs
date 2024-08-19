@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,11 +14,13 @@ namespace e_booking
     public partial class Dashboard : Form
     {
         private readonly AppDbContext _context;
+        private readonly IConfiguration _config;
 
-        public Dashboard(AppDbContext context)
+        public Dashboard(AppDbContext context, IConfiguration config)
         {
             InitializeComponent();
             _context = context;
+            _config = config;
         }
 
         public void LoadFormIntoPanel(Form form)
@@ -27,7 +30,7 @@ namespace e_booking
             form.Dock = DockStyle.Fill;
 
             this.panelMain.Controls.Clear();
-            this.panelMain.Controls.Add(form); // Add the form to the panel
+            this.panelMain.Controls.Add(form);
             form.Show();
         }
 
@@ -42,10 +45,9 @@ namespace e_booking
             LoadFormIntoPanel(reservationForm);
         }
 
-        // Example event handler for a button click to open the User Management Form
         private void btnUserManagement_Click(object sender, EventArgs e)
         {
-            var reservationForm = new UserForm(_context);
+            var reservationForm = new UserForm(_context, _config);
             LoadFormIntoPanel(reservationForm);
         }
     }

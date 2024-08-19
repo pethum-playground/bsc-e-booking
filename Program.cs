@@ -37,6 +37,8 @@ namespace e_booking
 
         private static void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton(Configuration);
+
             services.AddTransient<Login>();
             services.AddDbContext<AppDbContext>();
         }

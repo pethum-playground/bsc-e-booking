@@ -7,6 +7,7 @@
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.Button btnDisableUser;
         private System.Windows.Forms.Button btnRemoveUser;
+        private System.Windows.Forms.ProgressBar progressBar;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -29,6 +30,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.progressBar.Location = new System.Drawing.Point(12, 350);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(600, 23);
+            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.progressBar.Visible = false;
+
+            this.Controls.Add(this.progressBar);
+
             this.userTable = new System.Windows.Forms.DataGridView();
             this.btnAddUser = new System.Windows.Forms.Button();
             this.btnDisableUser = new System.Windows.Forms.Button();
