@@ -42,9 +42,11 @@ namespace e_booking
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(48, 76);
+            label1.BackColor = Color.Cornsilk;
+            label1.Font = new System.Drawing.Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(52, 58);
             label1.Name = "label1";
-            label1.Size = new Size(79, 20);
+            label1.Size = new Size(85, 19);
             label1.TabIndex = 0;
             label1.Text = "Student ID";
             label1.Click += label1_Click;
@@ -52,47 +54,59 @@ namespace e_booking
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(48, 133);
+            label2.BackColor = Color.Cornsilk;
+            label2.Font = new System.Drawing.Font("Century Gothic", 12F, FontStyle.Bold);
+            label2.Location = new Point(42, 100);
             label2.Name = "label2";
-            label2.Size = new Size(89, 20);
+            label2.Size = new Size(103, 19);
             label2.TabIndex = 1;
             label2.Text = "Event Name";
             // 
             // studentID
             // 
-            studentID.Location = new Point(185, 76);
+            studentID.Location = new Point(162, 57);
+            studentID.Margin = new Padding(3, 2, 3, 2);
             studentID.Name = "studentID";
-            studentID.Size = new Size(191, 27);
+            studentID.Size = new Size(196, 23);
             studentID.TabIndex = 2;
             // 
             // eventName
             // 
-            eventName.Location = new Point(185, 133);
+            eventName.Location = new Point(162, 100);
+            eventName.Margin = new Padding(3, 2, 3, 2);
             eventName.Name = "eventName";
-            eventName.Size = new Size(191, 27);
+            eventName.Size = new Size(196, 23);
             eventName.TabIndex = 3;
             // 
             // submit_btn
             // 
-            submit_btn.Location = new Point(282, 187);
+            submit_btn.BackColor = Color.Gold;
+            submit_btn.Font = new System.Drawing.Font("Century Gothic", 14F, FontStyle.Bold);
+            submit_btn.ForeColor = SystemColors.ControlText;
+            submit_btn.Location = new Point(151, 161);
+            submit_btn.Margin = new Padding(3, 2, 3, 2);
             submit_btn.Name = "submit_btn";
-            submit_btn.Size = new Size(94, 29);
+            submit_btn.Size = new Size(99, 35);
             submit_btn.TabIndex = 4;
             submit_btn.Text = "Submit";
-            submit_btn.UseVisualStyleBackColor = true;
+            submit_btn.UseVisualStyleBackColor = false;
             submit_btn.Click += submit_btn_Click;
             // 
-            // InputForm
+            // ReserveInputForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(482, 303);
+            BackgroundImage = Properties.Resources._445422976_1001481445099310_4223153017563866116_n;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(422, 259);
             Controls.Add(submit_btn);
             Controls.Add(eventName);
             Controls.Add(studentID);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "InputForm";
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "ReserveInputForm";
             Text = "InputForm";
             Load += InputForm_Load;
             ResumeLayout(false);

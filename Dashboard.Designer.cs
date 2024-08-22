@@ -26,77 +26,99 @@
         private void InitializeComponent()
         {
             panelSidebar = new Panel();
+            btnUpload = new Button();
             btn_reservation = new Button();
             btnDashboard = new Button();
             btnUserManagement = new Button();
             panelMain = new Panel();
-            btnUpload = new Button();
             panelSidebar.SuspendLayout();
             SuspendLayout();
             // 
             // panelSidebar
             // 
+            panelSidebar.BackColor = SystemColors.ActiveCaption;
             panelSidebar.Controls.Add(btnUpload);
             panelSidebar.Controls.Add(btn_reservation);
             panelSidebar.Controls.Add(btnDashboard);
             panelSidebar.Controls.Add(btnUserManagement);
             panelSidebar.Dock = DockStyle.Left;
             panelSidebar.Location = new Point(0, 0);
+            panelSidebar.Margin = new Padding(3, 2, 3, 2);
             panelSidebar.Name = "panelSidebar";
-            panelSidebar.Size = new Size(200, 450);
+            panelSidebar.Size = new Size(175, 338);
             panelSidebar.TabIndex = 0;
+            // 
+            // btnUpload
+            // 
+            btnUpload.BackColor = Color.Gold;
+            btnUpload.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            btnUpload.Location = new Point(18, 184);
+            btnUpload.Margin = new Padding(3, 2, 3, 2);
+            btnUpload.Name = "btnUpload";
+            btnUpload.Size = new Size(140, 30);
+            btnUpload.TabIndex = 3;
+            btnUpload.Text = "Hall Details";
+            btnUpload.UseVisualStyleBackColor = false;
+            btnUpload.Click += btnUpload_Click;
             // 
             // btn_reservation
             // 
-            btn_reservation.Location = new Point(20, 120);
+            btn_reservation.BackColor = Color.Gold;
+            btn_reservation.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            btn_reservation.Location = new Point(18, 90);
+            btn_reservation.Margin = new Padding(3, 2, 3, 2);
             btn_reservation.Name = "btn_reservation";
-            btn_reservation.Size = new Size(160, 40);
+            btn_reservation.Size = new Size(140, 30);
             btn_reservation.TabIndex = 2;
             btn_reservation.Text = "Reservation";
+            btn_reservation.UseVisualStyleBackColor = false;
             btn_reservation.Click += btnReservation_Click;
             // 
             // btnDashboard
             // 
-            btnDashboard.Location = new Point(20, 50);
+            btnDashboard.BackColor = Color.Gold;
+            btnDashboard.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDashboard.Location = new Point(18, 38);
+            btnDashboard.Margin = new Padding(3, 2, 3, 2);
             btnDashboard.Name = "btnDashboard";
-            btnDashboard.Size = new Size(160, 40);
+            btnDashboard.Size = new Size(140, 30);
             btnDashboard.TabIndex = 0;
             btnDashboard.Text = "Dashboard";
+            btnDashboard.UseVisualStyleBackColor = false;
             btnDashboard.Click += btnDashboard_Click;
             // 
             // btnUserManagement
             // 
-            btnUserManagement.Location = new Point(20, 182);
+            btnUserManagement.BackColor = Color.Gold;
+            btnUserManagement.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            btnUserManagement.Location = new Point(18, 136);
+            btnUserManagement.Margin = new Padding(3, 2, 3, 2);
             btnUserManagement.Name = "btnUserManagement";
-            btnUserManagement.Size = new Size(160, 40);
+            btnUserManagement.Size = new Size(140, 30);
             btnUserManagement.TabIndex = 1;
             btnUserManagement.Text = "User Management";
+            btnUserManagement.UseVisualStyleBackColor = false;
             btnUserManagement.Click += btnUserManagement_Click;
             // 
             // panelMain
             // 
+            panelMain.BackColor = Color.Cornsilk;
             panelMain.Dock = DockStyle.Fill;
-            panelMain.Location = new Point(200, 0);
+            panelMain.Location = new Point(175, 0);
+            panelMain.Margin = new Padding(3, 2, 3, 2);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(800, 450);
+            panelMain.Size = new Size(700, 338);
             panelMain.TabIndex = 1;
-            // 
-            // btnUpload
-            // 
-            btnUpload.Location = new Point(20, 246);
-            btnUpload.Name = "btnUpload";
-            btnUpload.Size = new Size(160, 40);
-            btnUpload.TabIndex = 3;
-            btnUpload.Text = "Hall Details";
-            btnUpload.Click += btnUpload_Click;
             // 
             // Dashboard
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1000, 450);
+            ClientSize = new Size(875, 338);
             Controls.Add(panelMain);
             Controls.Add(panelSidebar);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Dashboard";
             Text = "Dashboard";
             panelSidebar.ResumeLayout(false);

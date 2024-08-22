@@ -17,154 +17,171 @@ namespace e_booking
 
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            label1 = new Label();
+            label2 = new Label();
+            textBox1 = new TextBox();
+            dateTimePicker1 = new DateTimePicker();
+            label3 = new Label();
+            label4 = new Label();
+            dateTimePicker2 = new DateTimePicker();
+            label5 = new Label();
+            dateTimePicker3 = new DateTimePicker();
+            label6 = new Label();
+            richTextBox1 = new RichTextBox();
+            button1 = new Button();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(388, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Reserve Hall";
+            label1.AutoSize = true;
+            label1.BackColor = Color.Coral;
+            label1.Font = new Font("Century Gothic", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(304, 19);
+            label1.Name = "label1";
+            label1.Size = new Size(188, 36);
+            label1.TabIndex = 0;
+            label1.Text = "Reserve Hall";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(68, 75);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Co" +
-                "de No";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            label2.AutoSize = true;
+            label2.BackColor = Color.Cornsilk;
+            label2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(92, 78);
+            label2.Name = "label2";
+            label2.Size = new Size(78, 19);
+            label2.TabIndex = 1;
+            label2.Text = "Code No";
+            label2.Click += label2_Click;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(177, 67);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 23);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            textBox1.Location = new Point(190, 76);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(247, 23);
+            textBox1.TabIndex = 2;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(177, 116);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(247, 23);
-            this.dateTimePicker1.TabIndex = 3;
-            this.dateTimePicker1.Value = new System.DateTime(2024, 7, 7, 0, 0, 0, 0);
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            dateTimePicker1.Location = new Point(190, 120);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(247, 23);
+            dateTimePicker1.TabIndex = 3;
+            dateTimePicker1.Value = new DateTime(2024, 7, 7, 0, 0, 0, 0);
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(70, 124);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 15);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Date";
+            label3.AutoSize = true;
+            label3.BackColor = Color.Cornsilk;
+            label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(107, 123);
+            label3.Name = "label3";
+            label3.Size = new Size(45, 19);
+            label3.TabIndex = 4;
+            label3.Text = "Date";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(68, 168);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 15);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Starting Time";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            label4.AutoSize = true;
+            label4.BackColor = Color.Cornsilk;
+            label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(77, 170);
+            label4.Name = "label4";
+            label4.Size = new Size(107, 19);
+            label4.TabIndex = 5;
+            label4.Text = "Starting Time";
+            label4.Click += label4_Click;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(177, 162);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(115, 23);
-            this.dateTimePicker2.TabIndex = 6;
-            this.dateTimePicker2.CustomFormat = "HH:mm";
-            this.dateTimePicker2.ShowUpDown = true;
+            dateTimePicker2.CustomFormat = "HH:mm";
+            dateTimePicker2.Format = DateTimePickerFormat.Custom;
+            dateTimePicker2.Location = new Point(190, 168);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.ShowUpDown = true;
+            dateTimePicker2.Size = new Size(115, 23);
+            dateTimePicker2.TabIndex = 6;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(331, 167);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 15);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Ending Time";
+            label5.AutoSize = true;
+            label5.BackColor = Color.Cornsilk;
+            label5.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(333, 172);
+            label5.Name = "label5";
+            label5.Size = new Size(104, 19);
+            label5.TabIndex = 7;
+            label5.Text = "Ending Time";
             // 
             // dateTimePicker3
             // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker3.Location = new System.Drawing.Point(440, 160);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(121, 23);
-            this.dateTimePicker3.TabIndex = 8;
-            this.dateTimePicker3.CustomFormat = "HH:mm";
-            this.dateTimePicker3.ShowUpDown = true;
+            dateTimePicker3.CustomFormat = "HH:mm";
+            dateTimePicker3.Format = DateTimePickerFormat.Custom;
+            dateTimePicker3.Location = new Point(443, 169);
+            dateTimePicker3.Name = "dateTimePicker3";
+            dateTimePicker3.ShowUpDown = true;
+            dateTimePicker3.Size = new Size(121, 23);
+            dateTimePicker3.TabIndex = 8;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(73, 208);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 15);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Email";
+            label6.AutoSize = true;
+            label6.BackColor = Color.Cornsilk;
+            label6.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(105, 211);
+            label6.Name = "label6";
+            label6.Size = new Size(52, 19);
+            label6.TabIndex = 9;
+            label6.Text = "Email";
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(177, 205);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(195, 18);
-            this.richTextBox1.TabIndex = 10;
-            this.richTextBox1.Text = "";
+            richTextBox1.Location = new Point(190, 211);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(247, 18);
+            richTextBox1.TabIndex = 10;
+            richTextBox1.Text = "";
+            richTextBox1.TextChanged += richTextBox1_TextChanged;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(396, 261);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Reserve";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.BackColor = Color.Gold;
+            button1.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(337, 273);
+            button1.Name = "button1";
+            button1.Size = new Size(120, 32);
+            button1.TabIndex = 11;
+            button1.Text = "Reserve";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
-            // Form1
+            // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.dateTimePicker3);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources._445027318_1001481601765961_3255693985912320607_n;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(751, 396);
+            Controls.Add(button1);
+            Controls.Add(richTextBox1);
+            Controls.Add(label6);
+            Controls.Add(dateTimePicker3);
+            Controls.Add(label5);
+            Controls.Add(dateTimePicker2);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(textBox1);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Name = "Form2";
+            Text = "Form1";
+            Load += Form1_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         private System.Windows.Forms.Label label1;
