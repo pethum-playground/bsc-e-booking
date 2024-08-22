@@ -36,5 +36,10 @@
         {
             // Add your code here
         }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

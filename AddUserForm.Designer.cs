@@ -38,9 +38,11 @@
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(12, 40);
+            lblEmail.BackColor = Color.Cornsilk;
+            lblEmail.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblEmail.Location = new Point(42, 37);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(46, 20);
+            lblEmail.Size = new Size(52, 19);
             lblEmail.TabIndex = 1;
             lblEmail.Text = "Email";
             // 
@@ -48,34 +50,44 @@
             // 
             txtEmail.Location = new Point(100, 37);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(200, 27);
+            txtEmail.Size = new Size(183, 23);
             txtEmail.TabIndex = 3;
             // 
             // btnOK
             // 
-            btnOK.Location = new Point(144, 75);
+            btnOK.BackColor = Color.Gold;
+            btnOK.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnOK.Location = new Point(79, 89);
             btnOK.Name = "btnOK";
             btnOK.Size = new Size(75, 39);
             btnOK.TabIndex = 4;
             btnOK.Text = "OK";
+            btnOK.UseVisualStyleBackColor = false;
             btnOK.Click += btnOK_Click;
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(225, 75);
+            btnCancel.BackColor = Color.Gold;
+            btnCancel.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCancel.Location = new Point(160, 89);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 39);
             btnCancel.TabIndex = 5;
             btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
             // 
             // AddUserForm
             // 
-            ClientSize = new Size(324, 126);
+            BackColor = SystemColors.GradientInactiveCaption;
+            BackgroundImage = Properties.Resources._5pa_650x400;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(324, 165);
             Controls.Add(lblEmail);
             Controls.Add(txtEmail);
             Controls.Add(btnOK);
             Controls.Add(btnCancel);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "AddUserForm";
             Text = "Add New User";
             ResumeLayout(false);

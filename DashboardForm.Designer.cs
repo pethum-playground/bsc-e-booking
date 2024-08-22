@@ -24,43 +24,59 @@
 
         private void InitializeComponent()
         {
-            this.panelUserCards = new System.Windows.Forms.Panel();
-            this.panelReservationCards = new System.Windows.Forms.Panel();
-            this.panelMainContent = new System.Windows.Forms.Panel();
-            this.SuspendLayout();
+            panelUserCards = new Panel();
+            panelReservationCards = new Panel();
+            panelMainContent = new Panel();
+            SuspendLayout();
             // 
             // panelUserCards
             // 
-            this.panelUserCards.AutoScroll = true;
-            this.panelUserCards.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelUserCards.Size = new System.Drawing.Size(220, this.ClientSize.Height / 2);
-            this.panelUserCards.Padding = new System.Windows.Forms.Padding(10);
-            this.Controls.Add(this.panelUserCards);
+            panelUserCards.AutoScroll = true;
+            panelUserCards.BackColor = SystemColors.MenuBar;
+            panelUserCards.Dock = DockStyle.Left;
+            panelUserCards.Location = new Point(257, 0);
+            panelUserCards.Margin = new Padding(4, 3, 4, 3);
+            panelUserCards.Name = "panelUserCards";
+            panelUserCards.Padding = new Padding(12);
+            panelUserCards.Size = new Size(257, 519);
+            panelUserCards.TabIndex = 0;
             // 
             // panelReservationCards
             // 
-            this.panelReservationCards.AutoScroll = true;
-            this.panelReservationCards.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelReservationCards.Size = new System.Drawing.Size(220, this.ClientSize.Height / 2);
-            this.panelReservationCards.Padding = new System.Windows.Forms.Padding(10);
-            this.panelReservationCards.Location = new System.Drawing.Point(0, this.ClientSize.Height / 2);
-            this.Controls.Add(this.panelReservationCards);
+            panelReservationCards.AutoScroll = true;
+            panelReservationCards.BackColor = Color.Cornsilk;
+            panelReservationCards.Dock = DockStyle.Left;
+            panelReservationCards.Location = new Point(0, 0);
+            panelReservationCards.Margin = new Padding(4, 3, 4, 3);
+            panelReservationCards.Name = "panelReservationCards";
+            panelReservationCards.Padding = new Padding(12);
+            panelReservationCards.Size = new Size(257, 519);
+            panelReservationCards.TabIndex = 1;
             // 
             // panelMainContent
             // 
-            this.panelMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Controls.Add(this.panelMainContent);
+            panelMainContent.BackColor = Color.Cornsilk;
+            panelMainContent.Dock = DockStyle.Fill;
+            panelMainContent.Location = new Point(0, 0);
+            panelMainContent.Margin = new Padding(4, 3, 4, 3);
+            panelMainContent.Name = "panelMainContent";
+            panelMainContent.Size = new Size(933, 519);
+            panelMainContent.TabIndex = 2;
             // 
             // DashboardForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "DashboardForm";
-            this.Text = "Dashboard";
-            this.Load += new System.EventHandler(this.DashboardForm_Load);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(933, 519);
+            Controls.Add(panelUserCards);
+            Controls.Add(panelReservationCards);
+            Controls.Add(panelMainContent);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "DashboardForm";
+            Text = "Dashboard";
+            Load += DashboardForm_Load;
+            ResumeLayout(false);
         }
 
         #endregion

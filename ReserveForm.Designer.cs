@@ -60,13 +60,13 @@ namespace e_booking
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new System.Drawing.Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Blue;
+            label1.BackColor = Color.Coral;
+            label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Black;
             label1.ImageAlign = ContentAlignment.TopCenter;
-            label1.Location = new Point(254, 32);
+            label1.Location = new Point(170, 19);
             label1.Name = "label1";
-            label1.Size = new Size(239, 28);
+            label1.Size = new Size(251, 25);
             label1.TabIndex = 0;
             label1.Text = "Search Entries/ Booking";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -75,17 +75,20 @@ namespace e_booking
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(50, 80);
+            label2.BackColor = SystemColors.ActiveCaption;
+            label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(35, 63);
             label2.Name = "label2";
-            label2.Size = new Size(41, 20);
+            label2.Size = new Size(37, 16);
             label2.TabIndex = 1;
             label2.Text = "Date";
             // 
             // date_picker
             // 
-            date_picker.Location = new Point(126, 79);
+            date_picker.Location = new Point(81, 59);
+            date_picker.Margin = new Padding(3, 2, 3, 2);
             date_picker.Name = "date_picker";
-            date_picker.Size = new Size(242, 27);
+            date_picker.Size = new Size(212, 23);
             date_picker.TabIndex = 2;
             date_picker.ValueChanged += date_picker_ValueChanged;
             // 
@@ -93,7 +96,7 @@ namespace e_booking
             // 
             panel1.AutoScroll = true;
             panel1.AutoScrollMargin = new Size(0, 20);
-            panel1.BackColor = SystemColors.Control;
+            panel1.BackColor = Color.Cornsilk;
             panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(reset_btn);
             panel1.Controls.Add(end_time);
@@ -108,17 +111,20 @@ namespace e_booking
             panel1.Controls.Add(lectureHall_btn);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
-            panel1.Location = new Point(541, 12);
+            panel1.Location = new Point(449, 19);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(229, 436);
+            panel1.Size = new Size(201, 375);
             panel1.TabIndex = 3;
             // 
             // reset_btn
             // 
-            reset_btn.BackColor = SystemColors.ControlLight;
-            reset_btn.Location = new Point(123, 52);
+            reset_btn.BackColor = Color.Gold;
+            reset_btn.Font = new System.Drawing.Font("Century Gothic", 9.75F, FontStyle.Bold);
+            reset_btn.Location = new Point(108, 39);
+            reset_btn.Margin = new Padding(3, 2, 3, 2);
             reset_btn.Name = "reset_btn";
-            reset_btn.Size = new Size(68, 29);
+            reset_btn.Size = new Size(60, 22);
             reset_btn.TabIndex = 15;
             reset_btn.Text = "Reset";
             reset_btn.UseVisualStyleBackColor = false;
@@ -128,10 +134,11 @@ namespace e_booking
             // 
             end_time.CustomFormat = "HH:mm tt";
             end_time.Format = DateTimePickerFormat.Custom;
-            end_time.Location = new Point(76, 383);
+            end_time.Location = new Point(66, 287);
+            end_time.Margin = new Padding(3, 2, 3, 2);
             end_time.Name = "end_time";
             end_time.ShowUpDown = true;
-            end_time.Size = new Size(97, 27);
+            end_time.Size = new Size(85, 23);
             end_time.TabIndex = 14;
             end_time.Value = new DateTime(2024, 6, 20, 21, 56, 53, 0);
             // 
@@ -140,9 +147,9 @@ namespace e_booking
             label8.AutoSize = true;
             label8.BackColor = Color.Transparent;
             label8.ImageAlign = ContentAlignment.TopCenter;
-            label8.Location = new Point(32, 383);
+            label8.Location = new Point(28, 287);
             label8.Name = "label8";
-            label8.Size = new Size(25, 20);
+            label8.Size = new Size(19, 15);
             label8.TabIndex = 13;
             label8.Text = "To";
             label8.TextAlign = ContentAlignment.TopCenter;
@@ -153,9 +160,9 @@ namespace e_booking
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
             label7.ImageAlign = ContentAlignment.TopCenter;
-            label7.Location = new Point(27, 332);
+            label7.Location = new Point(24, 249);
             label7.Name = "label7";
-            label7.Size = new Size(43, 20);
+            label7.Size = new Size(35, 15);
             label7.TabIndex = 12;
             label7.Text = "From";
             label7.TextAlign = ContentAlignment.TopCenter;
@@ -164,21 +171,25 @@ namespace e_booking
             // 
             start_time.CustomFormat = "HH:mm tt";
             start_time.Format = DateTimePickerFormat.Custom;
-            start_time.Location = new Point(76, 332);
+            start_time.Location = new Point(66, 249);
+            start_time.Margin = new Padding(3, 2, 3, 2);
             start_time.Name = "start_time";
             start_time.ShowUpDown = true;
-            start_time.Size = new Size(97, 27);
+            start_time.Size = new Size(85, 23);
             start_time.TabIndex = 11;
             start_time.Value = new DateTime(2024, 6, 20, 0, 0, 0, 0);
             // 
             // filter_btn
             // 
-            filter_btn.Location = new Point(23, 432);
+            filter_btn.BackColor = Color.Gold;
+            filter_btn.Font = new System.Drawing.Font("Century Gothic", 9.75F, FontStyle.Bold);
+            filter_btn.Location = new Point(20, 324);
+            filter_btn.Margin = new Padding(3, 2, 3, 2);
             filter_btn.Name = "filter_btn";
-            filter_btn.Size = new Size(168, 29);
+            filter_btn.Size = new Size(147, 22);
             filter_btn.TabIndex = 9;
             filter_btn.Text = "Filter";
-            filter_btn.UseVisualStyleBackColor = true;
+            filter_btn.UseVisualStyleBackColor = false;
             filter_btn.Click += filter_btn_Click;
             // 
             // label6
@@ -187,9 +198,9 @@ namespace e_booking
             label6.BackColor = Color.Transparent;
             label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ImageAlign = ContentAlignment.TopCenter;
-            label6.Location = new Point(12, 290);
+            label6.Location = new Point(10, 218);
             label6.Name = "label6";
-            label6.Size = new Size(42, 20);
+            label6.Size = new Size(34, 15);
             label6.TabIndex = 10;
             label6.Text = "Time";
             label6.TextAlign = ContentAlignment.TopCenter;
@@ -201,9 +212,10 @@ namespace e_booking
             checkedListBox1.BorderStyle = BorderStyle.None;
             checkedListBox1.FormattingEnabled = true;
             checkedListBox1.Items.AddRange(new object[] { "Projector", "WhiteBoard", "Marking Pen", "Microphone" });
-            checkedListBox1.Location = new Point(23, 200);
+            checkedListBox1.Location = new Point(20, 150);
+            checkedListBox1.Margin = new Padding(3, 2, 3, 2);
             checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(168, 66);
+            checkedListBox1.Size = new Size(147, 36);
             checkedListBox1.TabIndex = 8;
             // 
             // label5
@@ -212,9 +224,9 @@ namespace e_booking
             label5.BackColor = Color.Transparent;
             label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ImageAlign = ContentAlignment.TopCenter;
-            label5.Location = new Point(12, 167);
+            label5.Location = new Point(10, 125);
             label5.Name = "label5";
-            label5.Size = new Size(84, 20);
+            label5.Size = new Size(66, 15);
             label5.TabIndex = 7;
             label5.Text = "Equements";
             label5.TextAlign = ContentAlignment.TopCenter;
@@ -222,9 +234,10 @@ namespace e_booking
             // computerLab_btn
             // 
             computerLab_btn.AutoSize = true;
-            computerLab_btn.Location = new Point(22, 125);
+            computerLab_btn.Location = new Point(19, 94);
+            computerLab_btn.Margin = new Padding(3, 2, 3, 2);
             computerLab_btn.Name = "computerLab_btn";
-            computerLab_btn.Size = new Size(124, 24);
+            computerLab_btn.Size = new Size(101, 19);
             computerLab_btn.TabIndex = 6;
             computerLab_btn.TabStop = true;
             computerLab_btn.Text = "Computer Lab";
@@ -233,9 +246,10 @@ namespace e_booking
             // lectureHall_btn
             // 
             lectureHall_btn.AutoSize = true;
-            lectureHall_btn.Location = new Point(22, 95);
+            lectureHall_btn.Location = new Point(19, 71);
+            lectureHall_btn.Margin = new Padding(3, 2, 3, 2);
             lectureHall_btn.Name = "lectureHall_btn";
-            lectureHall_btn.Size = new Size(109, 24);
+            lectureHall_btn.Size = new Size(88, 19);
             lectureHall_btn.TabIndex = 5;
             lectureHall_btn.TabStop = true;
             lectureHall_btn.Text = "Lecture Hall";
@@ -247,9 +261,9 @@ namespace e_booking
             label4.BackColor = Color.Transparent;
             label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ImageAlign = ContentAlignment.TopCenter;
-            label4.Location = new Point(12, 61);
+            label4.Location = new Point(10, 46);
             label4.Name = "label4";
-            label4.Size = new Size(70, 20);
+            label4.Size = new Size(54, 15);
             label4.TabIndex = 4;
             label4.Text = "Hall type";
             label4.TextAlign = ContentAlignment.TopCenter;
@@ -260,9 +274,9 @@ namespace e_booking
             label3.BackColor = Color.Transparent;
             label3.Font = new System.Drawing.Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ImageAlign = ContentAlignment.TopCenter;
-            label3.Location = new Point(78, 18);
+            label3.Location = new Point(68, 14);
             label3.Name = "label3";
-            label3.Size = new Size(45, 20);
+            label3.Size = new Size(36, 15);
             label3.TabIndex = 1;
             label3.Text = "Filter";
             label3.TextAlign = ContentAlignment.TopCenter;
@@ -270,19 +284,22 @@ namespace e_booking
             // 
             // listView1
             // 
-            listView1.Location = new Point(50, 150);
+            listView1.Location = new Point(33, 112);
+            listView1.Margin = new Padding(3, 2, 3, 2);
             listView1.Name = "listView1";
-            listView1.Size = new Size(443, 298);
+            listView1.Size = new Size(388, 272);
             listView1.TabIndex = 4;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.Click += listView1_Click;
             // 
             // search_btn
             // 
-            search_btn.BackColor = SystemColors.ControlLightLight;
-            search_btn.Location = new Point(389, 79);
+            search_btn.BackColor = Color.Gold;
+            search_btn.Font = new System.Drawing.Font("Century Gothic", 9.75F, FontStyle.Bold);
+            search_btn.Location = new Point(300, 59);
+            search_btn.Margin = new Padding(3, 2, 3, 2);
             search_btn.Name = "search_btn";
-            search_btn.Size = new Size(104, 29);
+            search_btn.Size = new Size(91, 22);
             search_btn.TabIndex = 5;
             search_btn.Text = "Search";
             search_btn.UseVisualStyleBackColor = false;
@@ -291,36 +308,42 @@ namespace e_booking
             // sort_label
             // 
             sort_label.AutoSize = true;
-            sort_label.Location = new Point(112, 127);
+            sort_label.BackColor = SystemColors.ActiveCaption;
+            sort_label.Location = new Point(86, 94);
             sort_label.Name = "sort_label";
-            sort_label.Size = new Size(15, 20);
+            sort_label.Size = new Size(12, 15);
             sort_label.TabIndex = 6;
             sort_label.Text = "-";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(50, 127);
+            label9.BackColor = SystemColors.ActiveCaption;
+            label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, FontStyle.Bold);
+            label9.Location = new Point(33, 93);
             label9.Name = "label9";
-            label9.Size = new Size(58, 20);
+            label9.Size = new Size(52, 16);
             label9.TabIndex = 7;
             label9.Text = "Sort by";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(399, 109);
+            label10.BackColor = SystemColors.GradientActiveCaption;
+            label10.Font = new System.Drawing.Font("Century Gothic", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label10.Location = new Point(312, 94);
             label10.Name = "label10";
-            label10.Size = new Size(79, 20);
+            label10.Size = new Size(70, 16);
             label10.TabIndex = 8;
             label10.Text = "(free slots)";
             // 
-            // Form1
+            // ReserveForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 469);
+            BackgroundImage = Properties.Resources._1pa_650x400;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(674, 411);
             Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(sort_label);
@@ -330,7 +353,9 @@ namespace e_booking
             Controls.Add(date_picker);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "Form1";
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "ReserveForm";
             Text = "Form1";
             Load += Form1_Load;
             panel1.ResumeLayout(false);

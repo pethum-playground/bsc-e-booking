@@ -30,78 +30,98 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.progressBar.Location = new System.Drawing.Point(12, 350);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(600, 23);
-            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.progressBar.Visible = false;
-
-            this.Controls.Add(this.progressBar);
-
-            this.userTable = new System.Windows.Forms.DataGridView();
-            this.btnAddUser = new System.Windows.Forms.Button();
-            this.btnDisableUser = new System.Windows.Forms.Button();
-            this.btnRemoveUser = new System.Windows.Forms.Button();
-
-            ((System.ComponentModel.ISupportInitialize)(this.userTable)).BeginInit();
-            this.SuspendLayout();
-
+            progressBar = new ProgressBar();
+            userTable = new DataGridView();
+            btnAddUser = new Button();
+            btnDisableUser = new Button();
+            btnRemoveUser = new Button();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)userTable).BeginInit();
+            SuspendLayout();
+            // 
+            // progressBar
+            // 
+            progressBar.Location = new Point(12, 350);
+            progressBar.Name = "progressBar";
+            progressBar.Size = new Size(600, 23);
+            progressBar.Style = ProgressBarStyle.Marquee;
+            progressBar.TabIndex = 0;
+            progressBar.Visible = false;
             // 
             // userTable
             // 
-            this.userTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.userTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-                new System.Windows.Forms.DataGridViewTextBoxColumn() { Name = "Email", HeaderText = "Email" },
-                new System.Windows.Forms.DataGridViewTextBoxColumn() { Name = "Status", HeaderText = "Status" }
-            });
-            this.userTable.Location = new System.Drawing.Point(12, 12);
-            this.userTable.Name = "userTable";
-            this.userTable.Size = new System.Drawing.Size(600, 300);
-            this.userTable.TabIndex = 0;
-
+            userTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            userTable.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2 });
+            userTable.Location = new Point(12, 12);
+            userTable.Name = "userTable";
+            userTable.Size = new Size(600, 300);
+            userTable.TabIndex = 0;
             // 
             // btnAddUser
             // 
-            this.btnAddUser.Location = new System.Drawing.Point(620, 20);
-            this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(150, 30);
-            this.btnAddUser.Text = "Add User";
-            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
-
+            btnAddUser.BackColor = Color.Gold;
+            btnAddUser.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            btnAddUser.Location = new Point(620, 20);
+            btnAddUser.Name = "btnAddUser";
+            btnAddUser.Size = new Size(150, 30);
+            btnAddUser.TabIndex = 1;
+            btnAddUser.Text = "Add User";
+            btnAddUser.UseVisualStyleBackColor = false;
+            btnAddUser.Click += btnAddUser_Click;
             // 
             // btnDisableUser
             // 
-            this.btnDisableUser.Location = new System.Drawing.Point(620, 60);
-            this.btnDisableUser.Name = "btnDisableUser";
-            this.btnDisableUser.Size = new System.Drawing.Size(150, 30);
-            this.btnDisableUser.Text = "Disable User";
-            this.btnDisableUser.Click += new System.EventHandler(this.btnDisableUser_Click);
-
+            btnDisableUser.BackColor = Color.Gold;
+            btnDisableUser.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            btnDisableUser.Location = new Point(620, 60);
+            btnDisableUser.Name = "btnDisableUser";
+            btnDisableUser.Size = new Size(150, 30);
+            btnDisableUser.TabIndex = 2;
+            btnDisableUser.Text = "Disable User";
+            btnDisableUser.UseVisualStyleBackColor = false;
+            btnDisableUser.Click += btnDisableUser_Click;
             // 
             // btnRemoveUser
             // 
-            this.btnRemoveUser.Location = new System.Drawing.Point(620, 100);
-            this.btnRemoveUser.Name = "btnRemoveUser";
-            this.btnRemoveUser.Size = new System.Drawing.Size(150, 30);
-            this.btnRemoveUser.Text = "Remove User";
-            this.btnRemoveUser.Click += new System.EventHandler(this.btnRemoveUser_Click);
-
+            btnRemoveUser.BackColor = Color.Gold;
+            btnRemoveUser.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            btnRemoveUser.Location = new Point(620, 100);
+            btnRemoveUser.Name = "btnRemoveUser";
+            btnRemoveUser.Size = new Size(150, 30);
+            btnRemoveUser.TabIndex = 3;
+            btnRemoveUser.Text = "Remove User";
+            btnRemoveUser.UseVisualStyleBackColor = false;
+            btnRemoveUser.Click += btnRemoveUser_Click;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // UserForm
             // 
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.userTable);
-            this.Controls.Add(this.btnAddUser);
-            this.Controls.Add(this.btnDisableUser);
-            this.Controls.Add(this.btnRemoveUser);
-            this.Text = "User Management";
-            this.Load += new System.EventHandler(this.UserForm_Load);
-
-            ((System.ComponentModel.ISupportInitialize)(this.userTable)).EndInit();
-            this.ResumeLayout(false);
+            BackColor = Color.Cornsilk;
+            ClientSize = new Size(800, 450);
+            Controls.Add(progressBar);
+            Controls.Add(userTable);
+            Controls.Add(btnAddUser);
+            Controls.Add(btnDisableUser);
+            Controls.Add(btnRemoveUser);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Name = "UserForm";
+            Text = "User Management";
+            Load += UserForm_Load;
+            ((System.ComponentModel.ISupportInitialize)userTable).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }
