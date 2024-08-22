@@ -42,6 +42,7 @@ namespace e_booking
 
             LoggedInUser.Instance.SetUser(user);
             var dashboard = new Dashboard(_context, _config);
+            dashboard.FormClosed += (s, args) => Application.Exit();
             dashboard.Show();
 
             this.Hide();

@@ -96,11 +96,11 @@
             // 
             // dataGridViewTextBoxColumn1
             // 
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.Name = "Email";
             // 
             // dataGridViewTextBoxColumn2
             // 
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.Name = "Status";
             // 
             // UserForm
             // 

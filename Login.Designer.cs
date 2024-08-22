@@ -39,10 +39,9 @@
             // 
             submit_btn.BackColor = Color.Gold;
             submit_btn.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            submit_btn.Location = new Point(97, 201);
-            submit_btn.Margin = new Padding(3, 2, 3, 2);
+            submit_btn.Location = new Point(111, 268);
             submit_btn.Name = "submit_btn";
-            submit_btn.Size = new Size(103, 36);
+            submit_btn.Size = new Size(118, 48);
             submit_btn.TabIndex = 9;
             submit_btn.Text = "Submit";
             submit_btn.UseVisualStyleBackColor = false;
@@ -50,19 +49,17 @@
             // 
             // Password
             // 
-            Password.Location = new Point(19, 124);
-            Password.Margin = new Padding(3, 2, 3, 2);
+            Password.Location = new Point(22, 165);
             Password.Name = "Password";
-            Password.Size = new Size(272, 23);
+            Password.Size = new Size(310, 27);
             Password.TabIndex = 8;
             Password.UseSystemPasswordChar = true;
             // 
             // Email
             // 
-            Email.Location = new Point(19, 57);
-            Email.Margin = new Padding(3, 2, 3, 2);
+            Email.Location = new Point(22, 76);
             Email.Name = "Email";
-            Email.Size = new Size(272, 23);
+            Email.Size = new Size(310, 27);
             Email.TabIndex = 7;
             // 
             // label2
@@ -70,9 +67,9 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(19, 103);
+            label2.Location = new Point(22, 137);
             label2.Name = "label2";
-            label2.Size = new Size(80, 19);
+            label2.Size = new Size(100, 23);
             label2.TabIndex = 6;
             label2.Text = "Password";
             // 
@@ -81,27 +78,26 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(19, 35);
+            label1.Location = new Point(22, 47);
             label1.Name = "label1";
-            label1.Size = new Size(49, 25);
+            label1.Size = new Size(61, 30);
             label1.TabIndex = 5;
             label1.Text = "Email";
             label1.UseCompatibleTextRendering = true;
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources._444945114_1001481525099302_5186990335017209024_n1;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(312, 442);
+            ClientSize = new Size(357, 352);
             Controls.Add(submit_btn);
             Controls.Add(Password);
             Controls.Add(Email);
             Controls.Add(label2);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "Login";
             Text = "Login";
             ResumeLayout(false);
